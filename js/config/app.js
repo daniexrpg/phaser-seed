@@ -13,7 +13,7 @@ var config = {
         license: "MIT",
         baseUrl: 'js/min',
         paths: {
-            "Phaser": "vendor/phaser.min",
+            "Phaser": "../config/vendor/phaser.min",
             "Preload": "scenes/Preload",
             "LoaderBar": "model/LoaderBar"
         }
@@ -31,7 +31,7 @@ var config = {
         license: "MIT",
         baseUrl: 'js/src',
         paths: {
-            "Phaser": "vendor/phaser.min",
+            "Phaser": "../config/vendor/phaser.min",
             "Preload": "scenes/Preload",
             "LoaderBar": "model/LoaderBar"
         }
@@ -39,7 +39,7 @@ var config = {
 };
 
 // Configure environment
-requirejs.config(config.prod);
+requirejs.config(config.dev);
 
 require(['Phaser', 'Preload'], function (Phaser, Preload) {
     app.game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', Preload);
